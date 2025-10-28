@@ -17,7 +17,7 @@ BARCODES=$3 # optional
 # Check if arguments were provided
 if [ -z "$INPUT_DIR" ] || [ -z "$OUTPUT_DIR" ]; then
     echo "Error: Please provide input and output directories"
-    echo "Usage: ./01_fastqc.sh <input_directory> <output_directory> <barcodes.txt optional>"
+    echo "Usage: ./02_process_radtags.sh <input_directory> <output_directory> <barcodes.txt optional>"
     exit 1
 fi
 
@@ -32,7 +32,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # Run process_radtags on all data files
 echo "Running process_radtags on files in $INPUT_DIR..."
-if [ -n "$BARCODES"]; then
+if [ -n "$BARCODES" ]; then
     process_radtags -p "$INPUT_DIR" -o "$OUTPUT_DIR" -b "$BARCODES" -e ecoRI -c -r -q --disable-rad-check
 else
     process_radtags -p "$INPUT_DIR" -o "$OUTPUT_DIR" -e ecoRI -c -r -q --disable-rad-check
