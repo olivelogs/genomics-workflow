@@ -7,16 +7,17 @@
 
 
 # Purpose: Run FastQC on all FASTQ files in a directory
-# Usage: ./01_fastqc.sh <input_directory> <output_directory>
+# Usage: ./01_fastqc.sh <input_directory> <output_directory> [threads (default 4)]
 
 # Get arguments
 INPUT_DIR=$1
 OUTPUT_DIR=$2
+THREADS=${3:-4} # Defaults to 4
 
 # Check if arguments were provided
 if [ -z "$INPUT_DIR" ] || [ -z "$OUTPUT_DIR" ]; then
     echo "Error: Please provide input and output directories"
-    echo "Usage: ./01_fastqc.sh <input_directory> <output_directory>"
+    echo "Usage: ./01_fastqc.sh <input_directory> <output_directory> [threads (default 4)]"
     exit 1
 fi
 
@@ -31,7 +32,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # Run FastQC on all FASTQ files
 echo "Running FastQC on files in $INPUT_DIR..."
-fastqc "$INPUT_DIR"/*.fq -o "$OUTPUT_DIR"
+fastqc -t "$THREADS" "$INPUT_DIR"/*.fq -o "$OUTPUT_DIR"
 
 # Check if FastQC succeeded
 if [ $? -eq 0 ]; then
