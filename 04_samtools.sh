@@ -14,7 +14,7 @@ THREADS=${3:-4} # Defaults to 4 if not provided
 
 # Check if arguments were provided
 if [ -z "$INPUT_DIR" ] || [ -z "$OUTPUT_DIR" ]; then
-    echo "Error: Please provide input and output directories and path to reference genome"
+    echo "Error: Please provide input and output directories"
     echo "Usage: ./04_samtools.sh <input_directory> <output_directory> [threads]"
     exit 1
 fi
