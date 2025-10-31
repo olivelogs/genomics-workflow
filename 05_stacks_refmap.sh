@@ -55,8 +55,9 @@ validate_popmap(){
             echo "Warning: BAM file not found for $sample"
         fi
 
-        echo "popmap validation complete!"
-    done
+    done < "$popmap"
+
+    echo "popmap validation complete!"
 }
 
 # validate
