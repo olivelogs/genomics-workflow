@@ -7,3 +7,4 @@ This is a re-creation of the workflow used at my 2022 bioinformatics internship!
 *Additional QC steps and diagnostic steps (kmer_filter, stacks_dist_extract) were explored during development but are not included in the final workflow*  
 **03_bwa_mem.sh** runs bwa mem on fq files in a directory  
 **04_samtools.sh** runs samtools view, sort, index, quickcheck, and flagstat on .sam files from bwa mem  
+**05_stacks_refmap.sh** runs stacks ref_map.pl on aligned BAM files  
