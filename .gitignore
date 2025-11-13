@@ -1,0 +1,24 @@
+# files #
+#########
+*.fq
+*.fastq
+*.sam
+*.bam
+*.vcf
+*.bai
+*.html
+*.zip
+config.yaml
+
+# directores #
+##############
+results/
+output/
+data/
+
+# system files #
+################
+.DS_Store
+__pycache__/
+*.pyc
+
