@@ -1,0 +1,13 @@
+samples:
+  - sample1
+  - sample2
+
+threads: 4
+
+fastqc_output: "results/fastqc"
+radtags_output: "results/radtags"
+
+raw_data: "data/raw"
+
+enzyme: ""
+barcode_file: ""
