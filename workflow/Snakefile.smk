@@ -18,7 +18,7 @@ rule process_radtags:
     output:
         "results/clean/{sample}_clean.fq"
     params:
-        OUTPUT_DIR="results/radtags",
+        OUTPUT_DIR="results/clean/",
         BARCODE=""
     shell:
         """
