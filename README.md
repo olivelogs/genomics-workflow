@@ -16,6 +16,7 @@ Used to process bulk RAD-seq data for 176 samples.
 ## Next Steps  
 
 **Snakemake**  
+i forgot to branch before starting snakemake. lessons were learned. please look at /scripts/ for what is actually functional right now.  
 I'm working on turning all of this into a reproducible workflow with Snakemake. Which requires refactoring everything in the scripts, as they loop through directories. So... stay tuned?  
 My test data is hidden, you'll need to copy config_template.yaml to config.yaml and fill in your sample info.  
 
